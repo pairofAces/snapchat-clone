@@ -21,6 +21,7 @@ function WebcamCapture() {
                 ref={webcamRef}
                 screenshotFormat="image/jpeg"
                 width={videoConstraints.width}
+                videoConstraints={videoConstraints}
             />
         </div>
     )
