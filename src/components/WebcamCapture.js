@@ -16,7 +16,8 @@ function WebcamCapture() {
 
     // create the onClick function or RadioButton
     const capture = useCallback(() => {
-
+        const imageSrc = webcamRef.current.getScreenshot();
+        console.log(imageSrc)
     }, [webcamRef])
 
     return (
@@ -33,6 +34,7 @@ function WebcamCapture() {
             <RadioButtonUncheckedIcon 
                 className="webcamCapture__button"
                 onClick={capture}
+                fontSize="large"
             />
         </div>
     )
