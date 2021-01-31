@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import Webcam from 'react-webcam';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 
@@ -16,8 +16,8 @@ function WebcamCapture() {
 
     // create the onClick function or RadioButton
     const capture = useCallback(() => {
-        
-    })
+
+    }, [webcamRef])
 
     return (
         <div className="webcamCapture">
