@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Webcam from 'react-webcam';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 
 // create video constraints to set the size of the camera video
 const videoConstraints = {
@@ -13,6 +14,11 @@ function WebcamCapture() {
     // create a reference point for the webcam
     const webcamRef = useRef(null);
 
+    // create the onClick function or RadioButton
+    const capture = useCallback(() => {
+        
+    })
+
     return (
         <div className="webcamCapture">
             <Webcam 
@@ -22,6 +28,11 @@ function WebcamCapture() {
                 screenshotFormat="image/jpeg"
                 width={videoConstraints.width}
                 videoConstraints={videoConstraints}
+            />
+
+            <RadioButtonUncheckedIcon 
+                className="webcamCapture__button"
+                onClick={capture}
             />
         </div>
     )
