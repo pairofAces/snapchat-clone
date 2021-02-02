@@ -1,19 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const appSlice = createSlice({
-  name: 'app',
+export const cameraSlice = createSlice({
+  name: 'camera',
   initialState: {
-    value: 0,
+    cameraImage: null,
   },
   reducers: {
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    setCameraImage: (state, action) => {
+      state.cameraImage = action.payload;
     },
+    resetCameraImage: (state) => {
+        
+    }
   },
 });
 
-export const { incrementByAmount } = appSlice.actions;
+export const { setCameraImage, resetCameraImage } = cameraSlice.actions;
 
-export const selectapp = state => state.app.value;
+export const selectcamera = state => state.camera.value;
 
-export default appSlice.reducer;
+export default cameraSlice.reducer;
