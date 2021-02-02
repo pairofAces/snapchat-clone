@@ -21,6 +21,9 @@ function App() {
           <Route exact path="/">
             <WebcamCapture />
           </Route>
+          <Route path="/preview">
+            <Preview />
+          </Route>
         </Switch>
       </div>
     </Router>
