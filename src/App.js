@@ -11,7 +11,7 @@ import {
 function App() {
   return (
     <div className="app">
-      <h1> Let's build this snapchat clone!</h1>
+      {/* <h1> Let's build this snapchat clone!</h1> */}
       <Router>
         <div className="app__body">
         <Switch>
