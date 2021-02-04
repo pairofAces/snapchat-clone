@@ -11,7 +11,8 @@ function Preview() {
     return (
         <div className="preview">
             {/* preview of the image goes here */}
-            <img src={selectCameraImage} alt=""/>
+            <h1>This is the preview of the image</h1>
+            <img src={cameraImage} alt=""/>
         </div>
     )
 }
