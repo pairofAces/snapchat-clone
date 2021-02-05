@@ -47,7 +47,7 @@ function Preview() {
             <img src={cameraImage} alt=""/>
             <div className="preview__footer">
                 <h2>Send Now</h2>
-                <SendIcon />
+                <SendIcon fontSize="small" className="preview__sendIcon"/>
             </div>
         </div>
     )
