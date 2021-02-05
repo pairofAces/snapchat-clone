@@ -27,6 +27,9 @@ function Preview() {
             {/* preview of the image goes here */}
             {/* <h1>This is the preview of the image</h1> */}
             <CloseIcon onClick={closePreview} className="preview__close"/>
+            <div className="preview__toolbarRight">
+
+            </div>
             <img src={cameraImage} alt=""/>
         </div>
     )
