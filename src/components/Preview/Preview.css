@@ -18,3 +18,11 @@
     flex-direction: column;
     margin: 5px;
 }
+
+/* MuiSvgIcon-root is the class that material-ui
+gives each of the icons */
+.preview__toolbarRight > .MuiSvgIcon-root {
+    font-size: 20px !important;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
