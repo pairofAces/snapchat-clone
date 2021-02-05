@@ -41,3 +41,8 @@ gives each of the icons */
     padding: 7px;
     cursor: pointer;
 }
+
+.preview__footer > h2 {
+    font-size: 8px;
+    margin-right: 3px;
+}
