@@ -20,7 +20,6 @@ function Preview() {
 
      const closePreview = () => {
         dispatch(resetCameraImage())
-        // history.replace('/');
      }
 
     return (
