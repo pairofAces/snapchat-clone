@@ -19,7 +19,7 @@ function Preview() {
      }, [])
 
      const closePreview = () => {
-        dispatch(resetCameraImage)
+        dispatch(resetCameraImage())
      }
 
     return (
