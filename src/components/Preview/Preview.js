@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { selectCameraImage } from '../../features/cameraSlice';
+import { resetCameraImage, selectCameraImage } from '../../features/cameraSlice';
 import './Preview.css';
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -10,6 +10,7 @@ function Preview() {
     // from the redux-data-layer
     const cameraImage = useSelector(selectCameraImage);
     const history = useHistory();
+    const dispatch = useDispatch();
 
      useEffect(() => {
         if (!cameraImage) {
@@ -18,7 +19,7 @@ function Preview() {
      }, [])
 
      const closePreview = () => {
-         
+        dispatch(resetCameraImage)
      }
 
     return (
