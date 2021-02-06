@@ -7,6 +7,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Chats from './components/Chats/Chats';
 
 function App() {
   return (
