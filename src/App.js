@@ -7,6 +7,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Chats from './components/Chats/Chats';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/preview">
             <Preview />
+          </Route>
+          <Route path="/chats">
+            <Chats />
           </Route>
         </Switch>
       </div>
