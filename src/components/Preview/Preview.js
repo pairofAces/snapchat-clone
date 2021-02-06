@@ -59,8 +59,9 @@ function Preview() {
                         read: false,
                         // profilePic goes here,
                         timeStamp:firebase.firestore.FieldValue.serverTimestamp(),
-                    }) 
-                })
+                    });
+                    history.replace('/chats');
+                });
             }
         );
      };
