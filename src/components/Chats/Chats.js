@@ -15,7 +15,7 @@ function Chats() {
                 </div>
                 <ChatBubbleIcon className="chats__chatIcon"/>
             </div>
-            <div className="chat__posts">
+            <div className="chats__posts">
 
             </div>
         </div>
