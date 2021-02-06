@@ -13,6 +13,7 @@ import CropIcon from '@material-ui/icons/Crop';
 import TimerIcon from '@material-ui/icons/Timer';
 import SendIcon from '@material-ui/icons/Send';
 import { v4 as uuid } from 'uuid';
+import { storage } from '../../firebase';
 
 function Preview() {
     // pull the image required in the preview div
@@ -32,7 +33,10 @@ function Preview() {
      };
 
      const sendPost = () => {
-         
+        const id = uuid();
+        const uploadTask = storage
+        .ref(`posts/${id}`)
+        .putString(cameraImage, "data_url");
      };
 
     return (
