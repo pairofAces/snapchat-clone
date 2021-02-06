@@ -47,4 +47,16 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: white;
+    overflow: scroll;
+}
+
+/* to get the scroll bar to be hidden: below */
+.chat__posts::-webkit-scrollbar {
+    display: none;
+}
+
+/* hiding the scrollbar for IE, Edge, Firefox */
+.chat__posts {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
