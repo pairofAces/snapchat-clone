@@ -13,7 +13,8 @@ import CropIcon from '@material-ui/icons/Crop';
 import TimerIcon from '@material-ui/icons/Timer';
 import SendIcon from '@material-ui/icons/Send';
 import { v4 as uuid } from 'uuid';
-import { storage } from '../../firebase';
+import { db, storage } from '../../firebase';
+import firebase from 'firebase';
 
 function Preview() {
     // pull the image required in the preview div
@@ -37,6 +38,31 @@ function Preview() {
         const uploadTask = storage
         .ref(`posts/${id}`)
         .putString(cameraImage, "data_url");
+
+        //state_changed is part of firebase storage-api 
+        uploadTask.on(
+            'state_changed',
+            null,
+            (error) => {
+            console.log(error);
+            },
+            () => {
+                // this is where the completed function will be
+                storage
+                .ref('posts')
+                .child(id)
+                .getDownloadURL()
+                .then(url => {
+                    db.collection('posts').add({
+                        imageUrl: url,
+                        username: "Test(in Preview)",
+                        read: false,
+                        // profilePic goes here,
+                        timeStamp:firebase.firestore.FieldValue.serverTimestamp(),
+                    }) 
+                })
+            }
+        );
      };
 
     return (
