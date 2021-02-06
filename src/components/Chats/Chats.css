@@ -25,3 +25,17 @@
     flex: 1;
     padding-left: 8px;
 }
+
+.chats__search > input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    flex: 1;
+    color: black;
+}
+
+.chats__search > input::placeholder {
+    color: lightgray;
+    opacity: 1;
+}
