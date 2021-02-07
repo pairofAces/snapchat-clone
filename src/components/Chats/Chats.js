@@ -1,10 +1,16 @@
 import { Avatar } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Chats.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 
 function Chats() {
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        
+    }, [])
+
     return (
         <div className="chats">
             <div className="chats__header">
