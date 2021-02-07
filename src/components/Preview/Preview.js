@@ -17,61 +17,50 @@ import { db, storage } from '../../firebase';
 import firebase from 'firebase';
 
 function Preview() {
-    // pull the image required in the preview div
-    // from the redux-data-layer
     const cameraImage = useSelector(selectCameraImage);
     const history = useHistory();
     const dispatch = useDispatch();
 
-     useEffect(() => {
+    useEffect(() => {
         if (!cameraImage) {
             history.replace('/')
         }
-     }, [cameraImage, history]);
+    }, [cameraImage, history])
 
-     const closePreview = () => {
-        dispatch(resetCameraImage())
-     };
+    const closePreview = () => {
+        dispatch(resetCameraImage());
+    }
 
-     const sendPost = () => {
+    const sendPost = () => {
         const id = uuid();
-        const uploadTask = storage
-        .ref(`posts/${id}`)
-        .putString(cameraImage, "data_url");
-
-        //state_changed is part of firebase storage-api 
-        uploadTask.on(
-            'state_changed',
-            null,
+        const uploadTask = storage.ref(`posts/${id}`).putString(cameraImage, 'data_url');
+        uploadTask.on('state_changed', 
+            null, 
             (error) => {
-            console.log(error);
+                console.log(error);
             },
             () => {
-                // this is where the completed function will be
-                storage
-                .ref('posts')
+                storage.ref('posts')
                 .child(id)
                 .getDownloadURL()
-                .then(url => {
+                .then((url) => {
                     db.collection('posts').add({
-                        imageUrl: url,
-                        username: "Test(in Preview)",
+                        imageURl: url,
+                        username: 'Karan',
                         read: false,
-                        // profilePic goes here,
-                        timeStamp:firebase.firestore.FieldValue.serverTimestamp(),
+                        //ProfilePic,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     });
                     history.replace('/chats');
                 });
             }
         );
-     };
+    };
 
-    return (
-        <div className="preview">
-            {/* preview of the image goes here */}
-            {/* <h1>This is the preview of the image</h1> */}
-            <CloseIcon onClick={closePreview} className="preview__close"/>
-            <div className="preview__toolbarRight">
+    return(
+        <div className='preview'>
+            <CloseIcon onClick={closePreview} className='preview__close' />
+            <div className='preview__toolbarRight'>
                 <TextFieldsIcon />
                 <CreateIcon />
                 <NoteIcon />
@@ -80,10 +69,10 @@ function Preview() {
                 <CropIcon />
                 <TimerIcon />
             </div>
-            <img src={cameraImage} alt=""/>
-            <div onClick={sendPost} className="preview__footer">
-                <h2>Send Now</h2>
-                <SendIcon fontSize="small" className="preview__sendIcon"/>
+            <img src={cameraImage}/>
+            <div  onClick={sendPost} className='preview__footer'>
+                <p>Send Now</p>
+                <SendIcon fontSize='small' className='preview__sendIcon' />
             </div>
         </div>
     )
