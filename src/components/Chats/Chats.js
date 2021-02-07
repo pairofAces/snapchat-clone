@@ -3,12 +3,16 @@ import React, { useEffect, useState } from 'react';
 import './Chats.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
+import { db } from '../../firebase';
 
 function Chats() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        
+        db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => setPosts(snapshot.docs.map(doc => ({
+            id: doc.id,
+            data: doc.data(),
+        }))))
     }, [])
 
     return (
