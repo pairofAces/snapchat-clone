@@ -26,7 +26,11 @@ function Chats() {
                 <ChatBubbleIcon className="chats__chatIcon"/>
             </div>
             <div className="chats__posts">
-
+                {posts.map(({ id, data: { profilePic, username, timestamp, imageUrl, read } }) => (
+                    <Chat 
+                        
+                    />
+                ))}
             </div>
         </div>
     )
