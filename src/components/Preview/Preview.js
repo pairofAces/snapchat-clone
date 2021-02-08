@@ -45,7 +45,7 @@ function Preview() {
                 .getDownloadURL()
                 .then((url) => {
                     db.collection('posts').add({
-                        imageURl: url,
+                        imageUrl: url,
                         username: 'Karan',
                         read: false,
                         //ProfilePic,

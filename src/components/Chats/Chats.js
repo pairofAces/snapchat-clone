@@ -38,6 +38,7 @@ function Chats() {
                         id, 
                         data: { profilePic, username, timestamp, imageUrl, read }, 
                     }) => (
+                        // console.log(imageUrl),
                     <Chat
                         key={id}
                         id={id}

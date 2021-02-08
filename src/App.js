@@ -8,6 +8,7 @@ import {
   Route
 } from "react-router-dom";
 import Chats from './components/Chats/Chats';
+import ChatView from './components/ChatView/ChatView';
 
 function App() {
   return (
@@ -16,18 +17,21 @@ function App() {
       <Router>
         <div className="app__body">
         <Switch>
-          <Route path="/about">
+          <Route exact path="/about">
             <h1>This will be the about page</h1>
             {/* <About /> */}
           </Route>
           <Route exact path="/">
             <WebcamCapture />
           </Route>
-          <Route path="/preview">
+          <Route exact path="/preview">
             <Preview />
           </Route>
-          <Route path="/chats">
+          <Route exact path="/chats">
             <Chats />
+          </Route>
+          <Route exact path="/chats/view">
+            <ChatView />
           </Route>
         </Switch>
       </div>

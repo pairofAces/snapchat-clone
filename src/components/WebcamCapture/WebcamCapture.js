@@ -44,7 +44,6 @@ function WebcamCapture() {
                 onClick={capture}
                 fontSize="large"
             />
-            {/* <img src={image} alt=""/> */}
         </div>
     )
 }
