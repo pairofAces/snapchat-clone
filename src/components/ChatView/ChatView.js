@@ -35,7 +35,9 @@ function ChatView() {
                 ]}
             >
                 {({remainingTime}) => {
-                    return remainingTime;
+                    if (remainingTime === 0) {
+                        exit();
+                    }
                 }}
             </CountdownCircleTimer>
         </div>
