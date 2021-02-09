@@ -8,7 +8,7 @@ function ChatView() {
     const selectedImage = useSelector(selectSelectedImage);
     const history = useHistory();
 
-    console.log(selectedImage)
+    // console.log(selectedImage)
     useEffect(() => {
         if (!selectedImage) {
             exit();
