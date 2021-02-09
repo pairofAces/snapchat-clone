@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { selectSelectedImage } from '../../features/appSlice';
 import './ChatView.css';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
 function ChatView() {
     const selectedImage = useSelector(selectSelectedImage);
@@ -22,6 +23,9 @@ function ChatView() {
     return (
         <div className="chatView">
             <img src={selectedImage} onClick={exit} alt=""/>
+            <CountdownCircleTimer>
+                
+            </CountdownCircleTimer>
         </div>
     )
 }
