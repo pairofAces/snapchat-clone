@@ -9,8 +9,12 @@ import {
 } from "react-router-dom";
 import Chats from './components/Chats/Chats';
 import ChatView from './components/ChatView/ChatView';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/appSlice';
 
 function App() {
+  const user = useSelector(selectUser);
+
   return (
     <div className="app">
       {/* <h1> Let's build this snapchat clone!</h1> */}
