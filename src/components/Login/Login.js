@@ -20,6 +20,7 @@ function Login() {
                 id: result.user.uid,
             }))
         })
+        .catch(error => alert(error.message));
     };
 
     return (
