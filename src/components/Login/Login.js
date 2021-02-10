@@ -15,7 +15,9 @@ function Login() {
         .then(result => {
             console.log(result)
             dispatch(login({
-
+                usename: result.user.displayName,
+                profilePic: result.user.photoURL,
+                id: result.user.uid,
             }))
         })
     };
