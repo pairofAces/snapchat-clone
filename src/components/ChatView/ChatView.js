@@ -23,24 +23,26 @@ function ChatView() {
     return (
         <div className="chatView">
             <img src={selectedImage} onClick={exit} alt=""/>
-            <CountdownCircleTimer
-                isPlaying
-                duration={10}
-                strokeWidth
-                size={50}
-                colors={[
-                    ["#004777", 0.33],
-                    ["#F78801", 0.33],
-                    ["#A30000", 0.33],
-                ]}
-            >
-                {({remainingTime}) => {
-                    if (remainingTime === 0) {
-                        exit();
-                    }
-                    return remainingTime;
-                }}
-            </CountdownCircleTimer>
+            <div className="chatView__timer">
+                <CountdownCircleTimer
+                    isPlaying
+                    duration={10}
+                    strokeWidth
+                    size={50}
+                    colors={[
+                        ["#004777", 0.33],
+                        ["#F78801", 0.33],
+                        ["#A30000", 0.33],
+                    ]}
+                >
+                    {({remainingTime}) => {
+                        if (remainingTime === 0) {
+                            exit();
+                        }
+                        return remainingTime;
+                    }}
+                </CountdownCircleTimer>
+            </div>
         </div>
     )
 }
