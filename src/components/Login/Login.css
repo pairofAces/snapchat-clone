@@ -1,0 +1,13 @@
+.login {
+    background-color: #01d8fe;
+}
+
+.login__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__container > img {
+    height: 300px;
+    object-fit: contain;
+}
