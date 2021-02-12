@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import WebcamCapture from './components/WebcamCapture/WebcamCapture';
 import Preview from './components/Preview/Preview';
@@ -12,10 +12,17 @@ import ChatView from './components/ChatView/ChatView';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from './features/appSlice';
 import Login from './components/Login/Login';
+import { auth } from './firebase';
 
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      
+    })
+  }, []);
 
   return (
     <div className="app">
