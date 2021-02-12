@@ -39,26 +39,29 @@ function App() {
         {!user ? (
           <Login />
         ) : (
-          <div className="app__body">
-          <Switch>
-            <Route exact path="/about">
-              <h1>This will be the about page</h1>
-              {/* <About /> */}
-            </Route>
-            <Route exact path="/">
-              <WebcamCapture />
-            </Route>
-            <Route exact path="/preview">
-              <Preview />
-            </Route>
-            <Route exact path="/chats">
-              <Chats />
-            </Route>
-            <Route exact path="/chats/view">
-              <ChatView />
-            </Route>
-          </Switch>
-        </div>
+          <>
+            <img className="app__logo" src="http://pngimg.com/uploads/snapchat/snapchat_PNG29.png" alt=""/>
+            <div className="app__body">
+            <Switch>
+              <Route exact path="/about">
+                <h1>This will be the about page</h1>
+                {/* <About /> */}
+              </Route>
+              <Route exact path="/">
+                <WebcamCapture />
+              </Route>
+              <Route exact path="/preview">
+                <Preview />
+              </Route>
+              <Route exact path="/chats">
+                <Chats />
+              </Route>
+              <Route exact path="/chats/view">
+                <ChatView />
+              </Route>
+            </Switch>
+          </div>
+        </>
         )}
     </Router>
       {/* react-webcam to use camera capabilities */}
