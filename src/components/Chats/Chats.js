@@ -5,13 +5,16 @@ import SearchIcon from '@material-ui/icons/Search';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import { auth, db } from '../../firebase';
 import Chat from '../Chat/Chat';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../features/appSlice';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import { useHistory } from 'react-router-dom';
 
 function Chats() {
      const [posts, setPosts] = useState([]);
      const user = useSelector(selectUser);
+     const dispatch = useDispatch();
+     const history = useHistory();
 
     useEffect(() => {
         db.collection('posts')
@@ -27,7 +30,7 @@ function Chats() {
     }, []);
 
     const takeSnap = () => {
-
+        history.push('/')
     };
     
     return(
@@ -67,4 +70,4 @@ function Chats() {
     )
 }
 
-export default Chats
+export default Chats;
