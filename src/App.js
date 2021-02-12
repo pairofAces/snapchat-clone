@@ -10,7 +10,7 @@ import {
 import Chats from './components/Chats/Chats';
 import ChatView from './components/ChatView/ChatView';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUser } from './features/appSlice';
+import { login, logout, selectUser } from './features/appSlice';
 import Login from './components/Login/Login';
 import { auth } from './firebase';
 
@@ -26,6 +26,8 @@ function App() {
           profilePic: authUser.photoURL,
           id: authUser.uid,
         }))
+      } else {
+        dispatch(logout())
       }
     })
   }, []);
