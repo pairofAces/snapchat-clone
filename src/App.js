@@ -20,7 +20,13 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      
+      if (authUser) {
+        dispatch(login({
+          username: authUser.displayName,
+          profilePic: authUser.photoURL,
+          id: authUser.uid,
+        }))
+      }
     })
   }, []);
 
